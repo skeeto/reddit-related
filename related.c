@@ -323,6 +323,7 @@ main(int argc, char *argv[])
         }
     }
 
+    if (verbose) fprintf(stderr, "Cleaning up.\n");
     trie_free(subreddits);
     trie_free(author_subreddit);
     trie_free(subreddit_author);
