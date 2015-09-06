@@ -79,6 +79,7 @@ function update() {
         s.textContent = sr;
     });
     if (result) {
+        location.replace('#' + sr);
         for (var i = 0; i < result.to.length; i++) {
             var item = document.createElement('div');
             item.className = 'result';
@@ -99,7 +100,6 @@ function update() {
 function linkto() {
     var sr = this.textContent;
     $('#subreddit').value = sr;
-    location.replace('#' + sr);
     update();
 }
 
