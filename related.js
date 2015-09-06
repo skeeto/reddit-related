@@ -57,7 +57,7 @@ Database.prototype.lookup = function(sr) {
         listing.push({from: from, count: table[from]});
     }
     result.from = listing.sort(function(a, b) {
-        return b.count - a.count;
+        return a.count - b.count;
     }).slice(0, 20).map(function(x) {
         return x.from;
     });
