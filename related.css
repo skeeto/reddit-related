@@ -76,6 +76,11 @@ input {
     margin-bottom: 10px;
 }
 
+.main > .description {
+    margin: 0 60px 15px 60px;
+    color: #555;
+}
+
 .sr {
     font-weight: bold;
 }
