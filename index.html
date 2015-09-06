@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Reddit Related Subreddits</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="related.css"/>
+    <script src="related.js"></script>
+  </head>
+  <body>
+    <div id="loading">
+      <img src="spinner.png" alt=""/>
+    </div>
+    <div class="main">
+      <h1>Reddit Related Subreddits</h1>
+      <span class="credit">
+        Data provided
+        by <a href="https://pushshift.io/">pushshift.io</a>.
+        Last updated July 2015.
+      </span>
+      <input id="subreddit" type="text"/>
+      <div class="output">
+        <div class="out">
+          <span class="description">
+            <span class="sr"></span> is most related to:
+          </span>
+          <div id="sr-out"></div>
+        </div>
+        <div class="in">
+          <span class="description">
+            Most related to <span class="sr"></span>:
+          </span>
+          <div id="sr-in"></div>
+        </div>
+      </div>
+    </div>
+ </body>
+</html>

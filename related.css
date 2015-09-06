@@ -1,0 +1,89 @@
+body {
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.main {
+    width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+#loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    padding-top: 100px;
+    font-size: 60px;
+    background: rgba(0, 0, 0, 0.6);
+    color: yellow;
+    z-index: 100;
+}
+
+h1 {
+    font-size: 30px;
+    margin: 10px 0 0px 0;
+}
+
+.credit {
+    font-size: 14px;
+}
+
+input {
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    margin: 10px auto 10px auto;
+    width: 600px;
+}
+
+.output {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.output > div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.output {
+    position: relative;
+}
+
+.output .out {
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.output .in {
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.description {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.sr {
+    font-weight: bold;
+}
+
+.result {
+    cursor: pointer;
+}
+
+.result:hover {
+    color: blue;
+}
