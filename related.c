@@ -128,7 +128,7 @@ transfer_simple(const char *key, void *data, void *arg)
 }
 
 static table *
-prefix_top(trie_t *t, const char *prefix, int limit)
+prefix_top(trie *t, const char *prefix, int limit)
 {
     char actual_prefix[MAX_LENGTH];
     sprintf(actual_prefix, "%s/", prefix);
@@ -142,7 +142,7 @@ static int
 transfer_trie(const char *key, void *data, void *arg)
 {
     (void) data;
-    trie_t *tmp = arg;
+    trie *tmp = arg;
     const char *subreddit = key;
     while (*subreddit != '/')
         subreddit++;
@@ -151,9 +151,9 @@ transfer_trie(const char *key, void *data, void *arg)
 }
 
 static table *
-related_table(trie_t *t, const table *names, int limit)
+related_table(trie *t, const table *names, int limit)
 {
-    trie_t *tmp = trie_create();
+    trie *tmp = trie_create();
     for (size_t i = 0; i < names->count; i++) {
         const char *name = names->entry[i].name;
         char prefix[MAX_LENGTH];
@@ -170,8 +170,8 @@ enum format {
 };
 
 static void
-print_stats(trie_t *subreddit_author,
-            trie_t *author_subreddit,
+print_stats(trie *subreddit_author,
+            trie *author_subreddit,
             const char *subreddit,
             enum format format,
             int divisor,
@@ -202,9 +202,9 @@ print_stats(trie_t *subreddit_author,
 }
 
 static void
-load_data(trie_t *subreddit_author,
-          trie_t *author_subreddit,
-          trie_t *subreddits,
+load_data(trie *subreddit_author,
+          trie *author_subreddit,
+          trie *subreddits,
           FILE *in)
 {
     size_t line_size = 32 * 1096 * 1096;
@@ -246,7 +246,7 @@ load_data(trie_t *subreddit_author,
 }
 
 static table *
-subreddits_by_count(trie_t *subreddits)
+subreddits_by_count(trie *subreddits)
 {
     size_t count = trie_count(subreddits, "");
     table *subreddit_table = table_create(count);
@@ -295,9 +295,9 @@ main(int argc, char *argv[])
         }
     }
 
-    trie_t *subreddit_author = trie_create();
-    trie_t *author_subreddit = trie_create();
-    trie_t *subreddits = trie_create();
+    trie *subreddit_author = trie_create();
+    trie *author_subreddit = trie_create();
+    trie *subreddits = trie_create();
 
     load_data(subreddit_author, author_subreddit, subreddits, stdin);
     if (verbose) fprintf(stderr, "Finished loading data.\n");
